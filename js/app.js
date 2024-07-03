@@ -14,12 +14,12 @@ console.log (età)
     // prezzo del biglietto è definito in base ai km (0.21€ al km)
     let prezzoBiglietto = 0.21 * km
     console.log (prezzoBiglietto.toFixed(2))
-    // va applicato uno sconto del 20% per i minorenni
-
+    
     let prezzoScontato;
-
+    
     if (età < 18) {
-
+        
+        // va applicato uno sconto del 20% per i minorenni
         prezzoScontato = prezzoBiglietto - ( prezzoBiglietto * 0.20 )
         
         console.log (prezzoScontato.toFixed(2))
@@ -31,14 +31,16 @@ console.log (età)
     
         console.log (prezzoScontato.toFixed(2))
     } else {
+        
+        prezzoScontato = prezzoBiglietto - ( prezzoBiglietto * 0)
 
-        console.log (prezzoBiglietto.toFixed(2))
+        console.log (prezzoScontato.toFixed(2))
         
     }
     
     // Stampare il prezzo del biglietto in console
 
-
+    console.log (prezzoScontato.toFixed(2))
 
 
 // Output del prezzo finale va messo fuori in forma umana con massimo due decimali
