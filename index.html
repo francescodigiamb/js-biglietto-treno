@@ -8,21 +8,29 @@
 </head>
 <body>
     <h1 class="p-4">Calcolare prezzo del biglietto</h1>
-    <form class="form-calcolo">
+    <form id="form-calcolo">
         <div class="p-4">
             <label class="form-label">Km da percorrere</label>
             <input type="text" class="form-control" id="km">
         </div>
         <div class="p-4">
-            <select id="age" class="form-select" aria-label="Default select example">
+
+            <label class="form-label">Età</label>
+            <input type="text" class="form-control" id="age">
+
+            <!-- <select id="age" class="form-select" aria-label="Default select example">
                 <option selected>Seleziona la tua età</option>
                 <option id="Minorenne" value="Minorenne">Minorenne</option>
                 <option id="Over65" value="Over65">Over65</option>
                 <option id="Altro" value="Altro">Altro</option>
-            </select>
+            </select> -->
         </div>  
         <div class="p-4">  
             <button type="submit" class="btn btn-primary" id="calculation">Calcola prezzo del biglietto</button>
+        </div>
+        <div class="p-4">
+            <label class="form-label">Prezzo Biglietto</label>
+            <output type="text" class="form-control" id="ticket">
         </div>
     </form>
     <script src="./js/app.js"></script>

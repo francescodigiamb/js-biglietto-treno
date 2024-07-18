@@ -52,73 +52,57 @@ console.log (formElement)
 
 // Richiamare l'input km 
 
-const inputKmElement = document.getElementById ("km")
+const kmInputElement = document.getElementById ("km")
 
-// console.log (kmElement)
+console.log (kmInputElement)
 
-// Richiamare la select dell'età
+// Richiamare l'input dell'età
 
 const ageElement = document.getElementById ("age")
+
 console.log (ageElement)
 
-ageElement.addEventListener ('click', function () {
+// Richiamiamo l'output del prezzo finale del biglietto
 
-    const age = ageElement.value
-    console.log (age)
-})
-// // Recuperiamo l'età
+const prezzoFinaleElement = document.getElementById ('ticket')
 
-const age = ageElement.value
+console.log (prezzoFinaleElement)
 
-let prezzoBiglietto = inputKmElement * 0.21
-
-// Richiamo il tasto per calcolare
-
-const calculationElement = document.getElementById ("calculation")
-
-// Aggiungiamo altro evento al form
-
- calculationElement.addEventListener ('click', function (event){
-
-    event.preventDefault();
-
-    if (age === Minorenne) {
-
-        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.20)
-
-                console.log (prezzoBiglietto.toFixed(2))
-
-
-    } else if (age === over65) {
-
-        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.40)
-
-            console.log (prezzoBiglietto.toFixed(2))
-
-    } else {
-
-            console.log(prezzoBiglietto.toFixed(2))
-
-    }
-
- })
+formElement.addEventListener ('submit', function (event){
+    
+    event.preventDefault()
     
     // Recuperiamo i km
+    const km = parseFloat(kmInputElement.value) //number
+    console.log (km)
+    const age = parseInt(ageElement.value) //number
+    console.log (age)
     
-    
-    // // Dichiariamo la variabile per il prezzo base
-    
-    // let prezzoBiglietto = km * 0.21
-    
-    // // Dichiariamo la variabile per lo sconto
-    
-    // let prezzoScontato 
-    
-    // SE minorenne assegnamo lo sconto
-    // if  (ageElement === Minorenne) {
-        
-    //     prezzoScontato = prezzoBiglietto - (prezzoBiglietto * 0.2)
+    // Dichiariamo la variabile per il prezzo base
 
-    // ALTRIMENTI SE over65 assegnamo un altro sconto 
+    let prezzoBiglietto = parseFloat ( km * 0.21 ) //number
     
-    // ALTRIMENTI prezzo base
+    console.log (prezzoBiglietto)
+    // ci calcoliamo un eventuale sconto 
+    if (age < 18) {
+        
+        prezzoScontato = prezzoBiglietto - (prezzoBiglietto * 0.20)
+        
+        console.log (prezzoScontato.toFixed(2))
+        
+        
+    } else if (age > 65) {
+        
+        prezzoScontato = prezzoBiglietto - (prezzoBiglietto * 0.40)
+        
+        console.log (prezzoScontato.toFixed(2))
+        
+    } else {
+        prezzoScontato = prezzoBiglietto
+        console.log(prezzoScontato.toFixed(2))
+        
+    }
+    console.log ('submit del form')
+    // stampiamo il prezzo finale  
+    prezzoFinaleElement.innerHTML = prezzoScontato + '€'
+})
